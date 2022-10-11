@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<title>Cuatrimotos Rental</title>
+    <link href="cuatrimoto.css" rel="stylesheet" type="text/css"
+</head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/cuatrimoto.js"></script>
+
+<body>
+    <center>
+        <br><br><h1>Cuatrimotos</h1><br><br><br>
+        ID de la cuatrimoto: &nbsp;<input type="number" id="idCuatrimoto">&nbsp;&nbsp;<button onclick="buscarPorId()"> Buscar por ID </button><br><br>
+        Marca de la cuatrimoto: &nbsp;<input type="text" id="marca"><br><br>
+        Modelo de la cuatrimoto: &nbsp;<input type="number" id="modelo"><br><br>
+        ID de la categoria: &nbsp;<input type="number" id="categoriaId"><br><br>
+        Nombre de la cuatrimoto: &nbsp;<input type="text" id="nombreCuatrimoto"><br><br><br><br>
+
+        <button onclick="guardarCuatrimoto()"> Guardar cuatrimoto </button>&nbsp;&nbsp;
+        <button onclick="editarCuatrimoto()"> Editar cuatrimoto </button>&nbsp;&nbsp;
+        <button onclick="leerCuatrimotos()"> Listar cuatrimotos </button><br><br><br><br>
+
+        <div id="resultado"></div>
+        
+    </center>
+</body>
+</html>

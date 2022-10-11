@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<title>Cuatrimotos Rental</title>
+    <link href="cuatrimoto.css" rel="stylesheet" type="text/css"
+</head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/cliente.js"></script>
+
+<body>
+    <center>
+        <br><br><h1>Clientes</h1><br><br><br>
+        ID del cliente: <input type="number" id="idCliente">&nbsp;&nbsp;<button onclick="buscarPorId()"> Buscar por ID </button><br><br>
+        Nombre del cliente: <input type="text" id="nombreCliente"><br><br>
+        Correo del cliente: <input type="text" id="correoCliente"><br><br>
+        Edad del cliente: <input type="number" id="edadCliente"><br><br><br><br>
+
+        <button onclick="guardarCliente()"> Guardar cliente </button>&nbsp;&nbsp;
+        <button onclick="editarCliente()"> Editar cliente </button>&nbsp;&nbsp;
+        <button onclick="leerClientes()"> Listar clientes </button><br><br><br><br>
+
+        <div id="resultado"></div>
+
+    </center>
+</body>
+</html>

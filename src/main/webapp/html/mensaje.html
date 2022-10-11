@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<title>Cuatrimotos Rental</title>
+    <link href="cuatrimoto.css" rel="stylesheet" type="text/css"
+</head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/mensaje.js"></script>
+
+<body>
+    <center>
+        <br><br><h1>Mensajes</h1><br><br><br>
+        ID del mensaje: <input type="number" id="idMensaje">&nbsp;&nbsp;<button onclick="buscarPorId()"> Buscar por ID </button><br><br>
+        Mensaje: <input type="text" id="mensaje"><br><br><br><br>
+
+        <button onclick="guardarMensaje()"> Guardar mensaje </button>&nbsp;&nbsp;
+        <button onclick="editarMensaje()"> Editar mensaje </button>&nbsp;&nbsp;
+        <button onclick="leerMensajes()"> Listar mensajes </button><br><br><br><br>
+
+        <div id="resultado"></div>
+
+    </center>
+</body>
+</html>
