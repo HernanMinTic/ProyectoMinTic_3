@@ -4,8 +4,9 @@
  */
 package com.project.quadbikes.controller;
 
-import com.project.quadbikes.model.Message;
-import com.project.quadbikes.service.MessageService;
+import com.project.quadbikes.model.Category;
+import com.project.quadbikes.model.Client;
+import com.project.quadbikes.service.CategoryService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,50 +27,51 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @CrossOrigin("*")
-@RequestMapping("/message")
-public class MessageController {
+@RequestMapping("/api/Category")
+public class CategoryController {
     @Autowired
-    private MessageService messageservice;
+    private CategoryService categoryservice;
     //ej de acceso: http://localhost/cliente-0.0.1.SNAPSHOT/client/list
     //ej de acceso: http://localhost/cliente-0.0.1.SNAPSHOT/client/444
     
     @GetMapping(value="/list")
-    public List<Message> recuperarTodos(){
-        return (List<Message>) messageservice.findAll();
+    public List<Category> recuperarTodos(){
+        return (List<Category>) categoryservice.findAll();
     }
     
     @GetMapping(value="/list/(id)")
-    public Message recuperarUno(@PathVariable Integer id){
-        return messageservice.findById(id);
+    public Category recuperarUno(@PathVariable Integer id){
+        return categoryservice.findById(id);
     }
     
     @PostMapping(value="/")
-    public ResponseEntity<Message> agregar(@RequestBody Message message){
-        Message mess;
-        mess = messageservice.save(message);
-        return new ResponseEntity<> (mess,HttpStatus.OK);
+    public ResponseEntity<Category> agregar(@RequestBody Category category){
+        Category cat;
+        cat = categoryservice.save(category);
+        return new ResponseEntity<> (cat,HttpStatus.OK);
     }
     
     @PutMapping(value="/")
-    public ResponseEntity<Message> actualizar(@RequestBody Message message){
-        Message mess = messageservice.findById(message.getId());
-        if(mess != null){
-            mess.setMessagetext(message.getMessagetext());
-            messageservice.save(mess);
+    public ResponseEntity<Category> actualizar(@RequestBody Category category){
+        Category cat = categoryservice.findById(category.getId());
+        if(cat != null){
+            cat.setName(category.getName());
+            cat.setDescription(category.getDescription());
+            categoryservice.save(cat);
         } else{
-            return new ResponseEntity<> (mess,HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<> (cat,HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        return new ResponseEntity<> (mess,HttpStatus.OK);
+        return new ResponseEntity<> (cat,HttpStatus.OK);
     }
 
     @DeleteMapping(value="/")
-    public ResponseEntity<Message> borrar (@PathVariable Integer id){
-        Message mess = messageservice.findById(id);
-        if(mess != null){
-            messageservice.delete(id);
+    public ResponseEntity<Category> borrar (@PathVariable Integer id){
+        Category cat = categoryservice.findById(id);
+        if(cat != null){
+            categoryservice.delete(id);
         }else{
-            return new ResponseEntity<> (mess,HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<> (cat,HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        return new ResponseEntity<> (mess,HttpStatus.OK);
+        return new ResponseEntity<> (cat,HttpStatus.OK);
     }
 }

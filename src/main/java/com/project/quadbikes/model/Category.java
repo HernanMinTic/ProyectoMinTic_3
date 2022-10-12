@@ -17,18 +17,16 @@ import javax.persistence.Table;
  * @author hernan
  */
 @Table
-@Entity(name="client")
-public class Client implements Serializable{
+@Entity(name="category")
+public class Category implements Serializable{
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="id")
     private Integer id;
     @Column(name="name")
     private String name;
-    @Column(name="email")
-    private String email;
-    @Column(name="age")
-    private Integer age;
+    @Column(name="description")
+    private String description;
 
     public Integer getId() {
         return id;
@@ -46,19 +44,12 @@ public class Client implements Serializable{
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
+    public String getDescription() {
+        return description;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setDescription(String description) {
+        this.description = description;
     }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
+    
 }

@@ -4,15 +4,13 @@
  */
 package com.project.quadbikes.repository;
 
-import com.project.quadbikes.model.Message;
+import com.project.quadbikes.model.Category;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author hernan
  */
-@Repository
-public interface MessageRepository extends CrudRepository<Message,Integer>{
+public interface CategoryRepository extends CrudRepository<Category,Integer>{
     
 }

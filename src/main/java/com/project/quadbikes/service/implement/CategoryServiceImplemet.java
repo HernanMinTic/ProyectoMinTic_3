@@ -4,9 +4,9 @@
  */
 package com.project.quadbikes.service.implement;
 
-import com.project.quadbikes.model.Client;
-import com.project.quadbikes.repository.ClientRepository;
-import com.project.quadbikes.service.ClientService;
+import com.project.quadbikes.model.Category;
+import com.project.quadbikes.repository.CategoryRepository;
+import com.project.quadbikes.service.CategoryService;
 import java.util.List;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,33 +17,32 @@ import org.springframework.stereotype.Service;
  * @author hernan
  */
 @Service
-public class ClientServiceImplement implements ClientService {
+public class CategoryServiceImplemet implements CategoryService {
 
     @Autowired
-    private ClientRepository clientrepository;
+    private CategoryRepository categoryrepository;
     
-    //Se implementa el guardado en la tabla del cliente
     @Override
     @Transactional
-    public Client save(Client client){
-        return clientrepository.save(client);
+    public Category save(Category category){
+        return categoryrepository.save(category);
     }
     
     @Override
     @Transactional
     public void delete(Integer id){
-        clientrepository.deleteById(id);
+        categoryrepository.deleteById(id);
     }
     
     @Override
     @Transactional
-    public Client findById(Integer id){
-        return clientrepository.findById(id).orElse(null);
+    public Category findById(Integer id){
+        return categoryrepository.findById(id).orElse(null);
     }
     
     @Override
     @Transactional
-    public List<Client> findAll(){
-        return (List<Client>) clientrepository.findAll();
+    public List<Category> findAll(){
+        return (List<Category>) categoryrepository.findAll();
     }
 }

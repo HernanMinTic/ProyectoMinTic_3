@@ -4,9 +4,9 @@
  */
 package com.project.quadbikes.service.implement;
 
-import com.project.quadbikes.model.Client;
-import com.project.quadbikes.repository.ClientRepository;
-import com.project.quadbikes.service.ClientService;
+import com.project.quadbikes.model.Reservation;
+import com.project.quadbikes.repository.ReservationRepository;
+import com.project.quadbikes.service.ReservationService;
 import java.util.List;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,33 +17,32 @@ import org.springframework.stereotype.Service;
  * @author hernan
  */
 @Service
-public class ClientServiceImplement implements ClientService {
+public class ReservationServiceImplemet implements ReservationService {
 
     @Autowired
-    private ClientRepository clientrepository;
+    private ReservationRepository reservationrepository;
     
-    //Se implementa el guardado en la tabla del cliente
     @Override
     @Transactional
-    public Client save(Client client){
-        return clientrepository.save(client);
+    public Reservation save(Reservation reservation){
+        return reservationrepository.save(reservation);
     }
     
     @Override
     @Transactional
     public void delete(Integer id){
-        clientrepository.deleteById(id);
+        reservationrepository.deleteById(id);
     }
     
     @Override
     @Transactional
-    public Client findById(Integer id){
-        return clientrepository.findById(id).orElse(null);
+    public Reservation findById(Integer id){
+        return reservationrepository.findById(id).orElse(null);
     }
     
     @Override
     @Transactional
-    public List<Client> findAll(){
-        return (List<Client>) clientrepository.findAll();
+    public List<Reservation> findAll(){
+        return (List<Reservation>) reservationrepository.findAll();
     }
 }

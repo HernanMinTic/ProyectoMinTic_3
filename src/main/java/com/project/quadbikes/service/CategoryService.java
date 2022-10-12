@@ -4,16 +4,16 @@
  */
 package com.project.quadbikes.service;
 
-import com.project.quadbikes.model.Message;
+import com.project.quadbikes.model.Category;
 import java.util.List;
 
 /**
  *
  * @author hernan
  */
-public interface MessageService {
-    public Message save(Message message);
+public interface CategoryService {
+    public Category save(Category category);
     public void delete(Integer id);
-    public Message findById(Integer id);
-    public List<Message> findAll();
+    public Category findById(Integer id);
+    public List<Category> findAll();
 }
